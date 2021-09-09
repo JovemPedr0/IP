@@ -1,0 +1,12 @@
+src = $(wildcard src/*.c)
+obj = $(src:.c=.o)
+
+CFLAGS = -g -O0 -Wall -lm
+
+exe: $(obj)
+	$(CC) -g -o $@ $^ $(CFLAGS)
+clean:
+	rm -rf *o exe
+	rm -rf src/*.o
+new:
+	make clean && make && clear
